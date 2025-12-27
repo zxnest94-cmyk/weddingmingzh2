@@ -1,1 +1,1125 @@
 # weddingmingzh2
+<!doctype html>
+<html lang="th" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สายใยชะตาใต้จันทรา</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="/_sdk/data_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+      font-family: 'Sarabun', sans-serif;
+    }
+    
+    .chinese-bg {
+      background: linear-gradient(180deg, #8B0000 0%, #DC143C 50%, #8B0000 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .chinese-pattern {
+      background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+    }
+    
+    .floating-lantern {
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      background: linear-gradient(180deg, #DC143C 0%, #8B0000 100%);
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 -5px 10px rgba(0, 0, 0, 0.3);
+      animation: float-swing 6s ease-in-out infinite;
+    }
+    
+    .floating-lantern::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 12px;
+      background: #654321;
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .floating-lantern::after {
+      content: '囍';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #FFD700;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .lantern-1 {
+      top: 5%;
+      left: 8%;
+      animation-delay: 0s;
+    }
+    
+    .lantern-2 {
+      top: 5%;
+      right: 8%;
+      animation-delay: 2s;
+    }
+    
+    .lantern-3 {
+      top: 25%;
+      left: 15%;
+      animation-delay: 4s;
+      width: 50px;
+      height: 70px;
+    }
+    
+    .lantern-4 {
+      top: 25%;
+      right: 15%;
+      animation-delay: 1s;
+      width: 50px;
+      height: 70px;
+    }
+    
+    @keyframes float-swing {
+      0%, 100% {
+        transform: translateY(0) rotate(-3deg);
+      }
+      50% {
+        transform: translateY(-15px) rotate(3deg);
+      }
+    }
+    
+    .title-glow {
+      text-shadow: 
+        0 0 10px #FFD700,
+        0 0 20px #FFD700,
+        0 0 30px #FFD700,
+        2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+    
+    .step-card {
+      background: linear-gradient(135deg, #FFF8DC 0%, #FFFAF0 100%);
+      border: 3px solid #FFD700;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .step-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.3), transparent);
+      transform: rotate(45deg);
+      transition: all 0.6s ease;
+    }
+    
+    .step-card:hover::before {
+      left: 100%;
+    }
+    
+    .step-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      border-color: #FFA500;
+    }
+    
+    .step-number {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+      border: 4px solid #FFD700;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+    
+    .step-number::after {
+      content: '';
+      position: absolute;
+      inset: 5px;
+      border: 1px solid rgba(255, 215, 0, 0.5);
+      border-radius: 50%;
+    }
+    
+    .ceremony-badge {
+      background: linear-gradient(135deg, #FFE4B5 0%, #FFD700 100%);
+      border-left: 5px solid #DC143C;
+      border-radius: 0 15px 15px 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .ceremony-badge::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, transparent, #DC143C, transparent);
+    }
+    
+    .ceremony-badge:hover {
+      transform: translateX(8px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      border-left-width: 8px;
+    }
+    
+    .form-container {
+      background: linear-gradient(135deg, #FFFAF0 0%, #FFF8DC 100%);
+      border: 5px solid #FFD700;
+      border-radius: 25px;
+      box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(255, 215, 0, 0.1);
+      position: relative;
+    }
+    
+    .form-container::before {
+      content: '🐉';
+      position: absolute;
+      top: -30px;
+      left: 30px;
+      font-size: 60px;
+      opacity: 0.3;
+      transform: rotate(-15deg);
+    }
+    
+    .form-container::after {
+      content: '🐉';
+      position: absolute;
+      bottom: -30px;
+      right: 30px;
+      font-size: 60px;
+      opacity: 0.3;
+      transform: rotate(15deg) scaleX(-1);
+    }
+    
+    .input-field {
+      border: 2px solid #FFD700;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      background: #FFFFFF;
+    }
+    
+    .input-field:focus {
+      outline: none;
+      border-color: #DC143C;
+      box-shadow: 0 0 0 3px rgba(220, 20, 60, 0.2);
+      transform: translateY(-2px);
+    }
+    
+    .package-option {
+      border: 3px solid #FFD700;
+      border-radius: 15px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFFAF0 100%);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .package-option:hover {
+      border-color: #DC143C;
+      box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+      transform: translateX(5px);
+    }
+    
+    .package-option input:checked + div {
+      background: linear-gradient(135deg, #FFE4B5 0%, #FFD700 50%, #FFE4B5 100%);
+    }
+    
+    .submit-btn {
+      background: linear-gradient(135deg, #DC143C 0%, #8B0000 50%, #DC143C 100%);
+      box-shadow: 0 8px 20px rgba(220, 20, 60, 0.5);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    
+    .submit-btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(220, 20, 60, 0.6);
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+    
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+    
+    .toast {
+      animation: slideIn 0.5s ease-out;
+    }
+    
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .loading-spinner {
+      display: none;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid #FFD700;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      animation: spin 0.8s linear infinite;
+    }
+    
+    .loading-spinner.active {
+      display: inline-block;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .decorative-cloud {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 100px;
+      animation: float-cloud 25s ease-in-out infinite;
+    }
+    
+    .cloud-1 {
+      width: 120px;
+      height: 50px;
+      top: 15%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+    
+    .cloud-2 {
+      width: 150px;
+      height: 60px;
+      top: 35%;
+      right: 8%;
+      animation-delay: 5s;
+    }
+    
+    .cloud-3 {
+      width: 100px;
+      height: 45px;
+      top: 55%;
+      left: 10%;
+      animation-delay: 10s;
+    }
+    
+    @keyframes float-cloud {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.15;
+      }
+      50% {
+        transform: translateY(-30px) translateX(20px);
+        opacity: 0.25;
+      }
+    }
+    
+    .section-divider {
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #FFD700, transparent);
+      margin: 0 auto;
+    }
+
+    .login-container {
+      background: linear-gradient(135deg, #FFFAF0 0%, #FFF8DC 100%);
+      border: 5px solid #FFD700;
+      border-radius: 25px;
+      box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.4),
+        inset 0 0 30px rgba(255, 215, 0, 0.1);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .booking-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFFAF0 100%);
+      border: 3px solid #FFD700;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .booking-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .status-pending {
+      background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+      color: white;
+    }
+
+    .status-approved {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+    }
+
+    .action-btn {
+      padding: 8px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .approve-btn {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      color: white;
+    }
+
+    .approve-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+    }
+
+    .delete-btn {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: white;
+    }
+
+    .delete-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+    }
+
+    .logout-btn {
+      background: linear-gradient(135deg, #DC143C 0%, #8B0000 100%);
+      color: #FFD700;
+      padding: 10px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 2px solid #FFD700;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .logout-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(220, 20, 60, 0.5);
+    }
+
+    .user-badge {
+      background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+      color: #8B0000;
+      padding: 8px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 2px solid #DC143C;
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+ </head>
+ <body class="h-full overflow-auto">
+  <div class="main-wrapper w-full min-h-full chinese-bg chinese-pattern"><!-- Floating Lanterns -->
+   <div class="floating-lantern lantern-1"></div>
+   <div class="floating-lantern lantern-2"></div>
+   <div class="floating-lantern lantern-3"></div>
+   <div class="floating-lantern lantern-4"></div><!-- Decorative Clouds -->
+   <div class="decorative-cloud cloud-1"></div>
+   <div class="decorative-cloud cloud-2"></div>
+   <div class="decorative-cloud cloud-3"></div><!-- Toast Container -->
+   <div id="toast-container" class="fixed top-6 right-6 left-6 md:left-auto md:w-96 z-50"></div><!-- Login Screen -->
+   <div id="login-screen" class="min-h-full flex items-center justify-center px-4 py-20">
+    <div class="login-container p-10 md:p-12 max-w-md w-full">
+     <div class="text-center mb-8">
+      <div class="inline-block mb-6">
+       <svg width="100" height="100" viewbox="0 0 120 120" class="mx-auto"><defs>
+         <radialgradient id="moonGradient" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+         </radialgradient>
+        </defs> <circle cx="60" cy="60" r="55" fill="url(#moonGradient)" opacity="0.3" /> <circle cx="60" cy="60" r="45" fill="url(#moonGradient)" opacity="0.6" /> <circle cx="60" cy="60" r="35" fill="#FFFACD" /> <text x="60" y="75" text-anchor="middle" font-size="40" fill="#DC143C" font-weight="bold">
+         囍
+        </text>
+       </svg>
+      </div>
+      <h1 class="text-4xl font-bold text-red-800 mb-2">เข้าสู่ระบบ</h1>
+      <p class="text-gray-700 text-lg">สายใยชะตาใต้จันทรา</p>
+      <div class="section-divider mt-4"></div>
+     </div><!-- Member Login -->
+     <div id="member-login-form" class="mb-6">
+      <h2 class="text-2xl font-bold text-red-800 mb-4">สมาชิก</h2>
+      <div class="mb-4"><label for="member-name-input" class="block text-red-900 font-bold mb-2">ชื่อของท่าน</label> <input type="text" id="member-name-input" class="input-field w-full px-4 py-3 text-lg" placeholder="กรอกชื่อของท่าน">
+      </div><button onclick="memberLogin()" class="submit-btn w-full text-white font-bold py-3 px-6 rounded-xl text-lg"> เข้าสู่ระบบ </button>
+     </div>
+     <div class="section-divider my-6"></div><!-- Master Login -->
+     <div id="master-login-form">
+      <h2 class="text-2xl font-bold text-red-800 mb-4">มาส</h2>
+      <div class="mb-4"><label for="master-name-input" class="block text-red-900 font-bold mb-2">ชื่อมาส</label> <input type="text" id="master-name-input" class="input-field w-full px-4 py-3 text-lg" placeholder="กรอกชื่อมาส">
+      </div>
+      <div class="mb-4"><label for="master-password-input" class="block text-red-900 font-bold mb-2">รหัสผ่าน</label> <input type="password" id="master-password-input" class="input-field w-full px-4 py-3 text-lg" placeholder="กรอกรหัสผ่าน">
+      </div><button onclick="masterLogin()" class="submit-btn w-full text-white font-bold py-3 px-6 rounded-xl text-lg"> เข้าสู่ระบบมาส </button>
+     </div>
+    </div>
+   </div><!-- Member View -->
+   <div id="member-view" class="hidden"><!-- Header -->
+    <header class="text-center pt-20 pb-12 px-4 relative">
+     <div class="absolute top-6 right-6">
+      <div class="flex items-center gap-4">
+       <div class="user-badge" id="member-badge">
+        สมาชิก:
+       </div><button onclick="logout()" class="logout-btn">ออกจากระบบ</button>
+      </div>
+     </div>
+     <div class="inline-block mb-6 relative">
+      <svg width="120" height="120" viewbox="0 0 120 120" class="mx-auto"><defs>
+        <radialgradient id="moonGradient2" cx="50%" cy="50%" r="50%">
+         <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+         <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+        </radialgradient>
+       </defs> <circle cx="60" cy="60" r="55" fill="url(#moonGradient2)" opacity="0.3" /> <circle cx="60" cy="60" r="45" fill="url(#moonGradient2)" opacity="0.6" /> <circle cx="60" cy="60" r="35" fill="#FFFACD" /> <text x="60" y="75" text-anchor="middle" font-size="40" fill="#DC143C" font-weight="bold">
+        囍
+       </text>
+      </svg>
+     </div>
+     <h1 id="site-title" class="text-6xl md:text-7xl font-bold text-yellow-300 mb-4 title-glow">สายใยชะตาใต้จันทรา</h1>
+     <p id="site-subtitle" class="text-2xl md:text-3xl text-yellow-100 mb-6 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">ระบบจัดพิธีวิวาห์สไตล์ราชวงศ์จีน</p>
+     <div class="flex justify-center items-center gap-4 text-yellow-200 text-xl font-bold"><span class="text-2xl">✦</span> <span>ร้อยรักเป็นหนึ่ง</span> <span class="text-2xl">•</span> <span>สมรสสมหวัง</span> <span class="text-2xl">✦</span>
+     </div>
+    </header><!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 pb-20"><!-- Steps Section -->
+     <section class="mb-16">
+      <div class="text-center mb-10">
+       <h2 class="text-4xl md:text-5xl font-bold text-yellow-300 mb-4 title-glow">ขั้นตอนการดำเนินงาน</h2>
+       <div class="section-divider"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8"><!-- Step 1 -->
+       <div class="step-card p-8">
+        <div class="flex items-start gap-5">
+         <div class="step-number rounded-full flex items-center justify-center flex-shrink-0"><span class="text-3xl font-bold text-yellow-300 relative z-10">๑</span>
+         </div>
+         <div class="flex-1 relative z-10">
+          <h3 class="text-2xl font-bold text-red-800 mb-3">การยื่นความประสงค์</h3>
+          <p class="text-gray-800 leading-relaxed text-lg">สมาชิกผู้ประสงค์จัดพิธีวิวาห์ กรุณากรอกแบบฟอร์มในห้องบริการให้ครบถ้วน พร้อมระบุวันและเวลาที่ต้องการจัดพิธี</p>
+         </div>
+        </div>
+       </div><!-- Step 2 -->
+       <div class="step-card p-8">
+        <div class="flex items-start gap-5">
+         <div class="step-number rounded-full flex items-center justify-center flex-shrink-0"><span class="text-3xl font-bold text-yellow-300 relative z-10">๒</span>
+         </div>
+         <div class="flex-1 relative z-10">
+          <h3 class="text-2xl font-bold text-red-800 mb-3">การพิจารณาวันพิธี</h3>
+          <p class="text-gray-800 leading-relaxed text-lg">มาสผู้ดูแลฝ่ายวิวาห์ จะเป็นผู้พิจารณาและอนุมัติวัน–เวลาการจัดงาน ทั้งนี้ขึ้นอยู่กับช่วงเวลาที่มาสผู้จัดพิธีมีความพร้อมดำเนินงาน</p>
+         </div>
+        </div>
+       </div><!-- Step 3 -->
+       <div class="step-card p-8">
+        <div class="flex items-start gap-5">
+         <div class="step-number rounded-full flex items-center justify-center flex-shrink-0"><span class="text-3xl font-bold text-yellow-300 relative z-10">๓</span>
+         </div>
+         <div class="flex-1 relative z-10">
+          <h3 class="text-2xl font-bold text-red-800 mb-3">การประสานงานด้านรูปแบบพิธี</h3>
+          <p class="text-gray-800 leading-relaxed text-lg">ภายหลังการอนุมัติวันพิธี ทีมกราฟฟิกดีไซน์จะทำหน้าที่ประสานงานกับสมาชิก ในเรื่องปกงานวิวาห์ และกิจกรรมภายในพิธี</p>
+         </div>
+        </div>
+       </div><!-- Step 4 -->
+       <div class="step-card p-8">
+        <div class="flex items-start gap-5">
+         <div class="step-number rounded-full flex items-center justify-center flex-shrink-0"><span class="text-3xl font-bold text-yellow-300 relative z-10">๔</span>
+         </div>
+         <div class="flex-1 relative z-10">
+          <h3 class="text-2xl font-bold text-red-800 mb-3">การเตรียมการจัดพิธี</h3>
+          <p class="text-gray-800 leading-relaxed text-lg">เมื่อจัดเตรียมปกและองค์ประกอบภายในงานครบถ้วนแล้ว มาสฝ่ายกิจกรรมจะเป็นผู้ดำเนินการจัดเตรียมพิธีตามกำหนดการที่วางไว้</p>
+         </div>
+        </div>
+       </div><!-- Step 5 -->
+       <div class="step-card p-8 md:col-span-2">
+        <div class="flex items-start gap-5">
+         <div class="step-number rounded-full flex items-center justify-center flex-shrink-0"><span class="text-3xl font-bold text-yellow-300 relative z-10">๕</span>
+         </div>
+         <div class="flex-1 relative z-10">
+          <h3 class="text-2xl font-bold text-red-800 mb-4">การดำเนินพิธีในวันงาน</h3>
+          <p class="text-gray-800 leading-relaxed text-lg mb-6">เมื่อถึงวันและเวลาที่กำหนด ผู้ดำเนินงานจะเป็นผู้ส่งคำพูดพิธีกร เพื่อใช้ในลำดับพิธี ดังนี้</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+           <div class="ceremony-badge p-4"><span class="font-bold text-red-900 text-lg">🎎 พิธีหมั้นหมาย</span>
+           </div>
+           <div class="ceremony-badge p-4"><span class="font-bold text-red-900 text-lg">🙏 เคารพฟ้าดิน</span>
+           </div>
+           <div class="ceremony-badge p-4"><span class="font-bold text-red-900 text-lg">👥 แขกร่วมอวยพร</span>
+           </div>
+           <div class="ceremony-badge p-4"><span class="font-bold text-red-900 text-lg">🏮 ส่งเจ้าสาวเข้าสู่ห้องหอ</span>
+           </div>
+           <div class="ceremony-badge p-4"><span class="font-bold text-red-900 text-lg">🎯 กิจกรรมผ่านด่านอุปสรรค</span>
+           </div>
+           <div class="ceremony-badge p-4"><span class="font-bold text-red-900 text-lg">💑 ส่งตัวบ่าวสาวเข้าหอ</span>
+           </div>
+           <div class="ceremony-badge p-4 md:col-span-2"><span class="font-bold text-red-900 text-lg">🎊 ร่วมฉลองและกล่าวปิดพิธี</span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div><!-- Step 6 -->
+       <div class="step-card p-8 md:col-span-2">
+        <div class="flex items-start gap-5">
+         <div class="step-number rounded-full flex items-center justify-center flex-shrink-0"><span class="text-3xl font-bold text-yellow-300 relative z-10">๖</span>
+         </div>
+         <div class="flex-1 relative z-10">
+          <h3 class="text-2xl font-bold text-red-800 mb-3">การดูแลเพิ่มเติม</h3>
+          <p class="text-gray-800 leading-relaxed text-lg">ในกรณีมีขั้นตอนเพิ่มเติมหรือรายละเอียดเฉพาะ จะมีการแนะนำและสอนงานให้แก่ผู้ดูแลพิธีโดยตรง</p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section><!-- Booking Form -->
+     <section>
+      <div class="form-container p-10 md:p-12 relative z-10">
+       <div class="text-center mb-10">
+        <h2 id="form-title" class="text-4xl md:text-5xl font-bold text-red-800 mb-4">ยื่นความประสงค์จัดพิธีวิวาห์</h2>
+        <p class="text-gray-700 text-xl">กรุณากรอกข้อมูลให้ครบถ้วนเพื่อดำเนินการจองคิว</p>
+        <div class="section-divider mt-4"></div>
+       </div>
+       <form id="booking-form"><!-- Couple Names -->
+        <div class="mb-8">
+         <h3 class="text-2xl font-bold text-red-800 mb-5 pb-3 border-b-3 border-yellow-600">ข้อมูลคู่บ่าวสาว</h3>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div><label for="bride-name" class="block text-red-900 font-bold mb-3 text-lg"> ชื่อเจ้าสาว <span class="text-red-600">*</span> </label> <input type="text" id="bride-name" required class="input-field w-full px-5 py-4 text-lg" placeholder="กรุณากรอกชื่อเจ้าสาว">
+          </div>
+          <div><label for="groom-name" class="block text-red-900 font-bold mb-3 text-lg"> ชื่อเจ้าบ่าว <span class="text-red-600">*</span> </label> <input type="text" id="groom-name" required class="input-field w-full px-5 py-4 text-lg" placeholder="กรุณากรอกชื่อเจ้าบ่าว">
+          </div>
+         </div>
+        </div><!-- Wedding Date & Time -->
+        <div class="mb-8">
+         <h3 class="text-2xl font-bold text-red-800 mb-5 pb-3 border-b-3 border-yellow-600">วันและเวลาที่ต้องการจัดพิธี</h3>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div><label for="wedding-date" class="block text-red-900 font-bold mb-3 text-lg"> วันที่จัดงาน <span class="text-red-600">*</span> </label> <input type="date" id="wedding-date" required class="input-field w-full px-5 py-4 text-lg">
+          </div>
+          <div><label for="wedding-time" class="block text-red-900 font-bold mb-3 text-lg"> เวลา <span class="text-red-600">*</span> </label> <input type="time" id="wedding-time" required class="input-field w-full px-5 py-4 text-lg">
+          </div>
+         </div>
+        </div><!-- Theme & Style -->
+        <div class="mb-8">
+         <h3 class="text-2xl font-bold text-red-800 mb-5 pb-3 border-b-3 border-yellow-600">ธีมและรูปแบบงาน</h3>
+         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div><label for="theme-color" class="block text-red-900 font-bold mb-3 text-lg"> สีธีมงาน <span class="text-red-600">*</span> </label> <select id="theme-color" required class="input-field w-full px-5 py-4 text-lg bg-white"> <option value="">-- เลือกสีธีมงาน --</option> <option value="แดงสมรส">🔴 แดงสมรส (มงคล)</option> <option value="ทองอร่าม">🟡 ทองอร่าม (รุ่งเรือง)</option> <option value="ชมพูดอกท้อ">🌸 ชมพูดอกท้อ (หวานหวาน)</option> <option value="เหลืองจักรพรรดิ">👑 เหลืองจักรพรรดิ (สง่างาม)</option> </select>
+          </div>
+          <div><label for="ceremony-style" class="block text-red-900 font-bold mb-3 text-lg"> รูปแบบพิธี <span class="text-red-600">*</span> </label> <select id="ceremony-style" required class="input-field w-full px-5 py-4 text-lg bg-white"> <option value="">-- เลือกรูปแบบพิธี --</option> <option value="ราชวงศ์ถัง">🏛️ ราชวงศ์ถัง (สง่างาม)</option> <option value="ราชวงศ์หมิง">👘 ราชวงศ์หมิง (หรูหรา)</option> <option value="ราชวงศ์ชิง">👗 ราชวงศ์ชิง (ประณีต)</option> <option value="โมเดิร์นจีน">✨ โมเดิร์นจีน (ร่วมสมัย)</option> </select>
+          </div>
+         </div>
+        </div><!-- Package Selection -->
+        <div class="mb-8">
+         <h3 class="text-2xl font-bold text-red-800 mb-5 pb-3 border-b-3 border-yellow-600">เลือกแพ็กเกจ</h3>
+         <div class="space-y-4"><label class="package-option flex items-start p-5"> <input type="radio" name="package" value="ด้ายแดงแห่งสองตระกูล" required class="mt-1 mr-4 w-6 h-6 text-red-600">
+           <div class="flex-1">
+            <div class="font-bold text-red-900 text-xl mb-2">
+             🧵 ด้ายแดงแห่งสองตระกูล
+            </div>
+            <p class="text-gray-800 text-lg leading-relaxed">พิธีแบบดั้งเดิม พร้อมชุดจีนโบราณ และพิธีกรรมครบถ้วน รวมถึงการประกอบพิธีแบบต้นตำรับ</p>
+           </div></label> <label class="package-option flex items-start p-5"> <input type="radio" name="package" value="สมรสใต้ฟ้าหมิงโจว" required class="mt-1 mr-4 w-6 h-6 text-red-600">
+           <div class="flex-1">
+            <div class="font-bold text-red-900 text-xl mb-2">
+             🌙 สมรสใต้ฟ้าหมิงโจว
+            </div>
+            <p class="text-gray-800 text-lg leading-relaxed">แพ็กเกจพรีเมี่ยม พร้อมฉากหลังสุดหรู และการจัดงานแบบ VIP</p>
+           </div></label>
+         </div>
+        </div><!-- Additional Notes -->
+        <div class="mb-8"><label for="additional-notes" class="block text-red-900 font-bold mb-3 text-lg"> ความต้องการเพิ่มเติม </label> <textarea id="additional-notes" rows="5" class="input-field w-full px-5 py-4 text-lg resize-none" placeholder="กรุณาระบุความต้องการหรือข้อมูลเพิ่มเติม..."></textarea>
+        </div><!-- Submit Button --> <button type="submit" id="submit-btn" class="submit-btn w-full text-white font-bold py-5 px-8 rounded-xl text-xl flex items-center justify-center gap-4 relative"> <span id="button-text" class="relative z-10">ส่งคำขอจองพิธี</span>
+         <div class="loading-spinner relative z-10"></div></button>
+       </form>
+      </div>
+     </section>
+    </main><!-- Footer -->
+    <footer class="text-center py-10 px-4">
+     <div class="text-yellow-200 text-lg">
+      <p class="mb-2 font-bold text-xl">✦ สายใยชะตาใต้จันทรา ✦</p>
+      <p class="font-bold">ระบบจัดพิธีวิวาห์สไตล์ราชวงศ์จีน</p>
+     </div>
+    </footer>
+   </div><!-- Master View -->
+   <div id="master-view" class="hidden"><!-- Header -->
+    <header class="text-center pt-20 pb-12 px-4 relative">
+     <div class="absolute top-6 right-6">
+      <div class="flex items-center gap-4">
+       <div class="user-badge" id="master-badge">
+        มาส:
+       </div><button onclick="logout()" class="logout-btn">ออกจากระบบ</button>
+      </div>
+     </div>
+     <div class="inline-block mb-6 relative">
+      <svg width="120" height="120" viewbox="0 0 120 120" class="mx-auto"><defs>
+        <radialgradient id="moonGradient3" cx="50%" cy="50%" r="50%">
+         <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+         <stop offset="100%" style="stop-color:#FFD700;stop-opacity:1" />
+        </radialgradient>
+       </defs> <circle cx="60" cy="60" r="55" fill="url(#moonGradient3)" opacity="0.3" /> <circle cx="60" cy="60" r="45" fill="url(#moonGradient3)" opacity="0.6" /> <circle cx="60" cy="60" r="35" fill="#FFFACD" /> <text x="60" y="75" text-anchor="middle" font-size="40" fill="#DC143C" font-weight="bold">
+        囍
+       </text>
+      </svg>
+     </div>
+     <h1 class="text-6xl md:text-7xl font-bold text-yellow-300 mb-4 title-glow">หน้าจัดการมาส</h1>
+     <p class="text-2xl md:text-3xl text-yellow-100 mb-6 font-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);">อนุมัติคำขอจัดพิธีวิวาห์</p>
+    </header><!-- Bookings List -->
+    <main class="max-w-7xl mx-auto px-4 pb-20">
+     <div class="form-container p-10 md:p-12 relative z-10">
+      <div class="text-center mb-10">
+       <h2 class="text-4xl md:text-5xl font-bold text-red-800 mb-4">รายการคำขอทั้งหมด</h2>
+       <div class="section-divider mt-4"></div>
+      </div>
+      <div id="bookings-list" class="space-y-6"><!-- Bookings will be rendered here -->
+      </div>
+      <div id="no-bookings" class="text-center py-12 hidden">
+       <p class="text-gray-600 text-2xl font-bold">ไม่มีคำขอในขณะนี้</p>
+      </div>
+     </div>
+    </main>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      site_title: "สายใยชะตาใต้จันทรา",
+      site_subtitle: "ระบบจัดพิธีวิวาห์สไตล์ราชวงศ์จีน",
+      form_title: "ยื่นความประสงค์จัดพิธีวิวาห์",
+      button_text: "ส่งคำขอจองพิธี"
+    };
+
+    async function onConfigChange(config) {
+      const titleElement = document.getElementById('site-title');
+      const subtitleElement = document.getElementById('site-subtitle');
+      const formTitleElement = document.getElementById('form-title');
+      const buttonTextElement = document.getElementById('button-text');
+
+      if (titleElement) titleElement.textContent = config.site_title || defaultConfig.site_title;
+      if (subtitleElement) subtitleElement.textContent = config.site_subtitle || defaultConfig.site_subtitle;
+      if (formTitleElement) formTitleElement.textContent = config.form_title || defaultConfig.form_title;
+      if (buttonTextElement) buttonTextElement.textContent = config.button_text || defaultConfig.button_text;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [],
+        borderables: [],
+        fontEditable: undefined,
+        fontSizeable: undefined
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["site_title", config.site_title || defaultConfig.site_title],
+        ["site_subtitle", config.site_subtitle || defaultConfig.site_subtitle],
+        ["form_title", config.form_title || defaultConfig.form_title],
+        ["button_text", config.button_text || defaultConfig.button_text]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Data SDK
+    let allBookings = [];
+
+    const dataHandler = {
+      onDataChanged(data) {
+        allBookings = data;
+        renderBookings();
+      }
+    };
+
+    async function initDataSdk() {
+      if (window.dataSdk) {
+        const initResult = await window.dataSdk.init(dataHandler);
+        if (!initResult.isOk) {
+          console.error("Failed to initialize data SDK");
+        }
+      }
+    }
+
+    initDataSdk();
+
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbz4noVtZACjzr1gTsA54pPeovH63CqPSCpk2l8aD6oICQDpg-yCRHBi6exjOpWhWVw/exec';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const bookingForm = document.getElementById('booking-form');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const submitBtn = document.getElementById('submit-btn');
+                    const buttonText = document.getElementById('button-text');
+                    const spinner = submitBtn.querySelector('.loading-spinner');
+
+                    submitBtn.disabled = true;
+                    if(buttonText) buttonText.textContent = "กำลังส่งข้อมูลสู่ใบบัญชี...";
+                    if(spinner) spinner.classList.add('active');
+
+                    const formData = {
+                        brideName: document.getElementById('bride-name').value,
+                        groomName: document.getElementById('groom-name').value,
+                        weddingDate: document.getElementById('wedding-date').value,
+                        weddingTime: document.getElementById('wedding-time').value,
+                        themeColor: document.getElementById('theme-color').value,
+                        ceremonyStyle: document.getElementById('ceremony-style').value,
+                        package: document.querySelector('input[name="package"]:checked').value,
+                        notes: document.getElementById('additional-notes').value
+                    };
+
+                    try {
+                        await fetch(SCRIPT_URL, {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(formData)
+                        });
+                        alert('ส่งคำขอจัดพิธีวิวาห์เรียบร้อยแล้ว! ข้อมูลถูกบันทึกลง Google Sheets');
+                        bookingForm.reset();
+                    } catch (error) {
+                        alert('เกิดข้อผิดพลาด: ไม่สามารถเชื่อมต่อกับเซิร์ฟเวอร์ได้');
+                    } finally {
+                        submitBtn.disabled = false;
+                        if(buttonText) buttonText.textContent = "ส่งคำขอจองพิธี";
+                        if(spinner) spinner.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+    // Login System
+    const MASTER_PASSWORD = 'mjmingzhou2025';
+    let currentUser = null;
+    let userType = null;
+
+    function checkLoginStatus() {
+      const savedUser = localStorage.getItem('currentUser');
+      const savedType = localStorage.getItem('userType');
+      
+      if (savedUser && savedType) {
+        currentUser = savedUser;
+        userType = savedType;
+        showView(savedType);
+      }
+    }
+
+    function memberLogin() {
+      const nameInput = document.getElementById('member-name-input');
+      const name = nameInput.value.trim();
+      
+      if (!name) {
+        showToast('กรุณากรอกชื่อของท่าน', 'error');
+        return;
+      }
+      
+      currentUser = name;
+      userType = 'member';
+      localStorage.setItem('currentUser', name);
+      localStorage.setItem('userType', 'member');
+      
+      showToast(`ยินดีต้อนรับคุณ ${name}! 🎊`, 'success');
+      showView('member');
+    }
+
+    function masterLogin() {
+      const nameInput = document.getElementById('master-name-input');
+      const passwordInput = document.getElementById('master-password-input');
+      const name = nameInput.value.trim();
+      const password = passwordInput.value;
+      
+      if (!name) {
+        showToast('กรุณากรอกชื่อมาส', 'error');
+        return;
+      }
+      
+      if (password !== MASTER_PASSWORD) {
+        showToast('รหัสผ่านไม่ถูกต้อง', 'error');
+        return;
+      }
+      
+      currentUser = name;
+      userType = 'master';
+      localStorage.setItem('currentUser', name);
+      localStorage.setItem('userType', 'master');
+      
+      showToast(`ยินดีต้อนรับมาส ${name}! 👑`, 'success');
+      showView('master');
+    }
+
+    function logout() {
+      currentUser = null;
+      userType = null;
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('userType');
+      
+      document.getElementById('member-name-input').value = '';
+      document.getElementById('master-name-input').value = '';
+      document.getElementById('master-password-input').value = '';
+      
+      showToast('ออกจากระบบสำเร็จ', 'success');
+      showView('login');
+    }
+
+    function showView(view) {
+      document.getElementById('login-screen').classList.add('hidden');
+      document.getElementById('member-view').classList.add('hidden');
+      document.getElementById('master-view').classList.add('hidden');
+      
+      if (view === 'login') {
+        document.getElementById('login-screen').classList.remove('hidden');
+      } else if (view === 'member') {
+        document.getElementById('member-view').classList.remove('hidden');
+        document.getElementById('member-badge').textContent = `สมาชิก: ${currentUser}`;
+      } else if (view === 'master') {
+        document.getElementById('master-view').classList.remove('hidden');
+        document.getElementById('master-badge').textContent = `มาส: ${currentUser}`;
+        renderBookings();
+      }
+    }
+
+    // Toast notification
+    function showToast(message, type = 'success') {
+      const toastContainer = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      const bgColor = type === 'success' 
+        ? 'linear-gradient(135deg, #10b981 0%, #059669 100%)' 
+        : 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+      const icon = type === 'success' ? '✓' : '✕';
+      
+      toast.className = 'toast rounded-xl shadow-2xl p-5 mb-4';
+      toast.style.background = bgColor;
+      toast.innerHTML = `
+        <div class="flex items-center gap-4 text-white">
+          <div class="text-3xl font-bold">${icon}</div>
+          <div class="flex-1">
+            <p class="font-bold text-lg">${message}</p>
+          </div>
+        </div>
+      `;
+      
+      toastContainer.appendChild(toast);
+      
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateY(-30px)';
+        toast.style.transition = 'all 0.5s ease-out';
+        setTimeout(() => toast.remove(), 500);
+      }, 5000);
+    }
+
+    // Booking Form handling
+    const form = document.getElementById('booking-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const loadingSpinner = submitBtn ? submitBtn.querySelector('.loading-spinner') : null;
+
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        submitBtn.disabled = true;
+        loadingSpinner.classList.add('active');
+        
+        const selectedPackage = document.querySelector('input[name="package"]:checked');
+        
+        const bookingData = {
+          booking_id: `WD${Date.now()}`,
+          bride_name: document.getElementById('bride-name').value,
+          groom_name: document.getElementById('groom-name').value,
+          wedding_date: document.getElementById('wedding-date').value,
+          wedding_time: document.getElementById('wedding-time').value,
+          theme_color: document.getElementById('theme-color').value,
+          ceremony_style: document.getElementById('ceremony-style').value,
+          package_name: selectedPackage ? selectedPackage.value : '',
+          additional_notes: document.getElementById('additional-notes').value,
+          status: 'รอการพิจารณา',
+          created_at: new Date().toISOString(),
+          member_name: currentUser
+        };
+
+        if (window.dataSdk) {
+          const result = await window.dataSdk.create(bookingData);
+          
+          submitBtn.disabled = false;
+          loadingSpinner.classList.remove('active');
+          
+          if (result.isOk) {
+            showToast('ส่งคำขอจองพิธีสำเร็จ! เราจะติดต่อกลับโดยเร็วที่สุด 🎊', 'success');
+            form.reset();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          } else {
+            showToast('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง', 'error');
+          }
+        }
+      });
+    }
+
+    // Render bookings for master view
+    function renderBookings() {
+      if (userType !== 'master') return;
+
+      const bookingsList = document.getElementById('bookings-list');
+      const noBookings = document.getElementById('no-bookings');
+
+      if (!allBookings || allBookings.length === 0) {
+        bookingsList.innerHTML = '';
+        noBookings.classList.remove('hidden');
+        return;
+      }
+
+      noBookings.classList.add('hidden');
+
+      bookingsList.innerHTML = allBookings.map(booking => `
+        <div class="booking-card p-8">
+          <div class="flex justify-between items-start mb-6">
+            <div>
+              <h3 class="text-3xl font-bold text-red-800 mb-2">
+                ${booking.bride_name} ❤️ ${booking.groom_name}
+              </h3>
+              <span class="status-badge ${booking.status === 'อนุมัติแล้ว' ? 'status-approved' : 'status-pending'}">
+                ${booking.status}
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <p class="text-gray-600 font-bold mb-1">📅 วันที่จัดงาน</p>
+              <p class="text-gray-800 text-lg">${booking.wedding_date}</p>
+            </div>
+            <div>
+              <p class="text-gray-600 font-bold mb-1">🕐 เวลา</p>
+              <p class="text-gray-800 text-lg">${booking.wedding_time}</p>
+            </div>
+            <div>
+              <p class="text-gray-600 font-bold mb-1">🎨 สีธีมงาน</p>
+              <p class="text-gray-800 text-lg">${booking.theme_color}</p>
+            </div>
+            <div>
+              <p class="text-gray-600 font-bold mb-1">👘 รูปแบบพิธี</p>
+              <p class="text-gray-800 text-lg">${booking.ceremony_style}</p>
+            </div>
+            <div class="md:col-span-2">
+              <p class="text-gray-600 font-bold mb-1">📦 แพ็กเกจ</p>
+              <p class="text-gray-800 text-lg">${booking.package_name}</p>
+            </div>
+            ${booking.additional_notes ? `
+              <div class="md:col-span-2">
+                <p class="text-gray-600 font-bold mb-1">📝 ความต้องการเพิ่มเติม</p>
+                <p class="text-gray-800 text-lg">${booking.additional_notes}</p>
+              </div>
+            ` : ''}
+            <div class="md:col-span-2">
+              <p class="text-gray-600 font-bold mb-1">👤 จองโดย</p>
+              <p class="text-gray-800 text-lg">${booking.member_name}</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4 flex-wrap">
+            ${booking.status === 'รอการพิจารณา' ? `
+              <button 
+                onclick="approveBooking('${booking.__backendId}')" 
+                class="action-btn approve-btn"
+              >
+                ✓ อนุมัติคำขอ
+              </button>
+            ` : ''}
+            <button 
+              onclick="deleteBooking('${booking.__backendId}')" 
+              class="action-btn delete-btn"
+            >
+              🗑️ ลบคำขอ
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    async function approveBooking(backendId) {
+      const booking = allBookings.find(b => b.__backendId === backendId);
+      if (!booking) return;
+
+      const updatedBooking = { ...booking, status: 'อนุมัติแล้ว' };
+
+      if (window.dataSdk) {
+        const result = await window.dataSdk.update(updatedBooking);
+        
+        if (result.isOk) {
+          showToast('อนุมัติคำขอสำเร็จ! 🎊', 'success');
+        } else {
+          showToast('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง', 'error');
+        }
+      }
+    }
+
+    async function deleteBooking(backendId) {
+      const booking = allBookings.find(b => b.__backendId === backendId);
+      if (!booking) return;
+
+      if (window.dataSdk) {
+        const result = await window.dataSdk.delete(booking);
+        
+        if (result.isOk) {
+          showToast('ลบคำขอสำเร็จ', 'success');
+        } else {
+          showToast('เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง', 'error');
+        }
+      }
+    }
+
+    // Check login status on page load
+    checkLoginStatus();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b45fa8355d77336',t:'MTc2NjgwODczNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
